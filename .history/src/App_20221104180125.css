@@ -1,0 +1,17 @@
+.header{
+  font-size:30px;
+  font-family: sans-serif;
+  font-weight:bold;
+
+}
+.input {
+  border-radius: 5px;
+  border: none;
+  background-color: aquamarine;
+width: 300px;
+height: 50px;
+}
+.input:hover{
+  background-color:azure;
+
+}

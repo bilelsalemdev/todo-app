@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
   const [value, setValue ] = useState('')
   const [datas, setData] = useState([])
-  const handleClick = () => {
+  const handleClick = (e) => {
     if(value === ''){
       return
     }
@@ -16,14 +16,16 @@ function App() {
     } */
     setData([...datas, value]);
     setValue("");
+e.target.name.focus()
+
   }
   const handleChange = (e) => {
     setValue(e.target.value)
   }
   return (
-    <div>
+    <div className='body'>
       <h1 className='header' >TODO-APP</h1>
-      <input className='input' type="text" onChange={(e) => handleChange(e)} value={value} />
+      <input className='input' type="text" name='input' onChange={(e) => handleChange(e)} value={value} />
       <button className='button' onClick={ handleClick} >add todo</button>
       <ul className='list'>
       {datas.map((data, index) => (<li key={index} className='item'>{data}</li>) )}

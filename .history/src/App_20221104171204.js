@@ -5,15 +5,15 @@ import { useState } from 'react';
 function App() {
   const [value, setValue ] = useState('')
   const [datas, setData] = useState([])
-  const handleClick = () => {
+  const handleClick = (e) => {
     if(value === ''){
       return
     }
-   /*  if(e.key==='Enter')
+    if(e.key==='Enter')
     {
       setData([...datas, value]);
       setValue("");
-    } */
+    }
     setData([...datas, value]);
     setValue("");
   }
@@ -22,11 +22,11 @@ function App() {
   }
   return (
     <div>
-      <h1 className='header' >TODO-APP</h1>
-      <input className='input' type="text" onChange={(e) => handleChange(e)} value={value} />
-      <button className='button' onClick={ handleClick} >add todo</button>
-      <ul className='list'>
-      {datas.map((data, index) => (<li key={index} className='item'>{data}</li>) )}
+      <h1>TODO-APP</h1>
+      <input type="text" onChange={(e) => handleChange(e)} value={value} />
+      <button onClick={handleClick} >add todo</button>
+      <ul>
+      {datas.map((data, index) => (<li key={index}>{data}</li>) )}
       </ul>
     </div>
   );

@@ -21,7 +21,7 @@ function App() {
     setValue(e.target.value)
   }
   return (
-    <div>
+    <div className='body'>
       <h1 className='header' >TODO-APP</h1>
       <input className='input' type="text" onChange={(e) => handleChange(e)} value={value} />
       <button className='button' onClick={ handleClick} >add todo</button>
